@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>天气:<span></span></p>
+</body>
+<script>
+    let xhr=new XMLHttpRequest()
+    xhr.open('GET','http://rap2api.taobao.org/app/mock/data/2025566',true)
+    xhr.onload=function(){
+        document.querySelector('span').innerText=JSON.parse(xhr.responseText).weather
+        console.log(JSON.parse(xhr.responseText))
+    }
+    xhr.send()
+</script>
+</html>
